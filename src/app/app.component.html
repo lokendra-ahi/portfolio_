@@ -1,0 +1,33 @@
+ <ng-container *ngIf="!loading else load">
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#profiles">Profiles</a>
+  </div>
+  <div class="scroll-container">
+    <div class="scroll-page1" name="home" id="home" style="background-color: black;" >
+      <app-profile-heading></app-profile-heading>
+    </div>
+  
+    <div id="projects" name="projects">
+      <app-profile-projects></app-profile-projects>
+    </div>
+  
+    <div  id="profiles" style="height: 100%;" name="profiles">
+      <div class="scroll-page1" >
+         <!-- <app-profile-data></app-profile-data>  -->
+        <app-profile-projects
+        [profile]="true"
+        ></app-profile-projects>
+      </div>
+      
+    </div>
+    
+  </div>
+</ng-container>
+
+ <ng-template #load>
+  <mat-spinner style="margin:20% 50% auto;height: 100px !important;" 
+  ></mat-spinner>
+ </ng-template>
+
